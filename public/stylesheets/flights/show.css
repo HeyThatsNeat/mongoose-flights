@@ -1,11 +1,23 @@
 ul {
   margin: 0 0 16px;
-  padding: 0;
+  padding: 0px;
   list-style: none;
+  display: block;
+  position: relative;
+  left: -180px;
+  bottom: 24px;
 }
 
 li {
   font-weight: bold;
+}
+
+#add-meal-to-flight {
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+  top: 39%;
 }
 
 table {

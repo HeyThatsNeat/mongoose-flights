@@ -1,0 +1,35 @@
+<%- include('../partials/head-html.ejs') %>
+<link rel="stylesheet" href="/stylesheets/meals/new.css" />
+<%- include('../partials/nav.ejs') %>
+
+<main>
+<h1><%= title %></h1>
+<form id="new-form" action="/meals" method="POST">
+    <label for="name">Meal Name:</label>
+    <input type="text" name="name" id="name" placeholder="Meal Name" autocomplete="off">
+
+    <button type="submit">Add Meal</button>
+</form>
+
+
+<% if (meals.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Meals Already Added:</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% meals.forEach(function(meal) { %>
+          <tr>
+            <td>- <%= meal.name %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h3>No Meals Yet</h3>
+  <% } %>
+</main>
+
+<%- include('../partials/footer.ejs') %>
